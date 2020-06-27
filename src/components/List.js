@@ -57,7 +57,7 @@ class List extends Component {
 
   render() {
     return (
-      <div class="box">
+      <div className="box">
       <ul>       
         {Object.entries(this.text).map( article =>  (
           <Todo key={article[1]["data"]["article_id"]} article_id={article[1]["data"]["article_id"]}  title={article[1]["data"]["title"]} category={article[1]["data"]["category"]} content={article[1]["data"]["content"]}/>

@@ -37,7 +37,7 @@ export default class Add extends Component {
   render() {
     const { title, category, content } = this.state;
     return (
-      <div class="box">
+      <div className="box">
         <div className="field">
           <label className="label">Title</label>
           <input

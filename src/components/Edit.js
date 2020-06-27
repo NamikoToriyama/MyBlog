@@ -36,7 +36,7 @@ class Edit extends Component {
 
   render() {
     return (
-      <div class="box">
+      <div className="box">
         <div className="field">
           <label className="label">Title**</label>
           <input

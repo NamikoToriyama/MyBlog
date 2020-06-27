@@ -5,7 +5,7 @@ export default class Article extends Component {
 
   render() {
     return (
-      <div class="box">
+      <div className="box">
         <div className="article">
         <h1>{this.props.location.state.title}</h1>
         <p class="category">カテゴリ:{this.props.location.state.category}</p>
