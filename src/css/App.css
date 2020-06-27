@@ -43,7 +43,7 @@ header{
   margin-top: 3.5em;
   text-align: center;
   width        : 70%;
-  height       : calc(100vh - 3.5em);
+  height       : 100%;
   background-color: rgba(255 , 255, 255, 0.9);
 }
 
@@ -66,10 +66,14 @@ header{
 }
 
 h1{
-  font-size: 4em;
+  font-size: 3em;
 }
 
 .content{
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
+#blogContent {
+  height: 260px;
+  font-size: 16px;
+}

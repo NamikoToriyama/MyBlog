@@ -16,7 +16,6 @@ export default class Delete extends Component {
     firebase.firestore()
       .collection('articles')
       .where("article_id", "==", Number(this.state.article_id))
-      .limit(10)
       .get()
       .then(snapshot => {
         if (snapshot.empty) {
@@ -35,6 +34,7 @@ export default class Delete extends Component {
   }
 
   onClick() {    
+    console.log("click")
     this.getDocumentId()
     this.props.history.push('/List')
   }
@@ -45,7 +45,6 @@ export default class Delete extends Component {
         <p>消す記事の番号を入力してください</p>
         <input
             className="input"
-            value={this.state.article_id}
             onChange={e => this.setState({ article_id: e.target.value })}
           />
           <div className="control">

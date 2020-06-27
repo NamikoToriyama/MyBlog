@@ -10,29 +10,42 @@ class List extends Component {
     super(props);
     this.state = {
       data: [],
+      update: true,
     };
     this.text = []
     this.onClick = this.onClick.bind(this);
   }
 
   componentDidMount() {
+    console.log( "なんちゃら")
     firebase.firestore()
       .collection('articles')
-      .limit(10)
+      .limit(20)
+      .orderBy("article_id", "desc")
       .get()
       .then(snapshot => {
         snapshot.forEach(doc => {
-          console.log(doc.data())
           this.setState({ data: doc.data()|| [] });
           this.text.push(this.state)
         })
+        this.setState({update: false})
       })
     .catch(err => {
       console.log('Error getting documents', err); 
     });
   }
 
+  shouldComponentUpdate() {
+    if(this.state.update) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+ 
   onClick() {    
+    console.log( "click")
     this.props.history.push({
         pathname: '/Article',
         state: { 
@@ -44,25 +57,22 @@ class List extends Component {
       });
   }
 
-  debug(data){
-    console.log(data)
+  debug(){
+    console.log(this.text.length)
   }
 
-  test(){
-    Object.entries(this.text).map( article =>  {
-      console.log(article[1]["data"])
-    })
-  }
 
   render() {
     return (
       <div class="box">
       <ul>
+       
+        {this.debug()}
         {Object.entries(this.text).map( article =>  (
           <Todo key={article[1]["data"]["article_id"]} article_id={article[1]["data"]["article_id"]}  title={article[1]["data"]["title"]} category={article[1]["data"]["category"]} content={article[1]["data"]["content"]}/>
         ))}
         
-        <Todo key={this.state.data["article_id"]} article_id={this.state.data["article_id"]} title={this.state.data["title"]} category={this.state.data["category"]} content={this.state.data["content"]}/>
+        {/* <Todo key={this.state.data["article_id"]} article_id={this.state.data["article_id"]} title={this.state.data["title"]} category={this.state.data["category"]} content={this.state.data["content"]}/> */}
           
       </ul>
       </div>

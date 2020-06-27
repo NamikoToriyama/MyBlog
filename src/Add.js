@@ -28,7 +28,6 @@ export default class Add extends Component {
       snapshot.forEach(doc => {
         size = doc.data()["article_id"]
       })
-      // console.log(snapshot[0].data()["article_id"])
       this.addFirestore(collection, size+1)
       console.log(size)
       this.setState({ title: '',  category: '', content: ''});
@@ -59,6 +58,7 @@ export default class Add extends Component {
           <label className="label">Content</label>
           <input
             className="input"
+            id="blogContent"
             value={this.state.content}
             onChange={e => this.setState({ content: e.target.value })}
           />

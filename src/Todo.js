@@ -6,15 +6,24 @@ class Todo extends Component {
   constructor() {
     super();
     this.onClick = this.onClick.bind(this);
-  }
-
-  debug(){
-    console.log(this.props)
+    this.edit = this.editArticle.bind(this);
   }
 
   onClick() {    
     this.props.history.push({
       pathname: '/Article',
+      state: { 
+        article_id : this.props.article_id,
+        title: this.props.title,
+        category: this.props.category,
+        content: this.props.content,
+      }
+    });
+  }
+
+  editArticle(){
+    this.props.history.push({
+      pathname: '/Edit',
       state: { 
         article_id : this.props.article_id,
         title: this.props.title,
@@ -32,6 +41,7 @@ class Todo extends Component {
             <p>{this.props.article_id}</p>
             <p>{this.props.title}</p>
             <button  onClick={this.onClick}>詳細をみる</button>
+            <button  onClick={this.edit}>記事の修正</button>
           </div>
         </nav>
       </li>
