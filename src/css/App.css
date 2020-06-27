@@ -60,3 +60,16 @@ header{
   color: #61dafb;
 }
 
+.category{
+  text-align: right;
+  margin-right: 10%;
+}
+
+h1{
+  font-size: 4em;
+}
+
+.content{
+  font-size: 2em;
+}
+

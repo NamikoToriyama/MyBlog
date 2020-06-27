@@ -23,7 +23,7 @@ export default class Delete extends Component {
           console.log('No matching documents.');
           return;
         }
-    
+            
         snapshot.forEach(doc => {
           console.log(doc.id, '=>', doc.data());
           firebase.firestore().collection('articles').doc(doc.id).delete();
@@ -36,15 +36,12 @@ export default class Delete extends Component {
 
   onClick() {    
     this.getDocumentId()
-    
-    // let deleteDoc =firebase.firestore().collection('articles').doc('BJ').where(this.state.id).delete();
-    // console.log(this.state.id)
-    // this.setState({ id: ''});
+    this.props.history.push('/List')
   }
 
   render() {
     return (
-      <div class="box">
+      <div>
         <p>消す記事の番号を入力してください</p>
         <input
             className="input"

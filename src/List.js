@@ -6,13 +6,13 @@ import Todo from "./Todo";
 
 
 class List extends Component {
-
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       data: [],
     };
     this.text = []
+    this.onClick = this.onClick.bind(this);
   }
 
   componentDidMount() {
@@ -32,6 +32,18 @@ class List extends Component {
     });
   }
 
+  onClick() {    
+    this.props.history.push({
+        pathname: '/Article',
+        state: { 
+          article_id : this.state.article_id,
+          title: "title",
+          category: "category",
+          content: "content",
+        }
+      });
+  }
+
   debug(data){
     console.log(data)
   }
@@ -46,10 +58,6 @@ class List extends Component {
     return (
       <div class="box">
       <ul>
-        {/* {this.debug(this.text)}
-        {this.test()} */}
-        {/* {this.debug(this.state)} */}
-        
         {Object.entries(this.text).map( article =>  (
           <Todo key={article[1]["data"]["article_id"]} article_id={article[1]["data"]["article_id"]}  title={article[1]["data"]["title"]} category={article[1]["data"]["category"]} content={article[1]["data"]["content"]}/>
         ))}
