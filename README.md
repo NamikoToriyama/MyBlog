@@ -1,6 +1,25 @@
+## めも
+
+### ビルド
+```
+yarn build
+```
+
+### デプロイ
+```
+$ firebase deploy
+```
+
+## 参考リンク
+FirebaseとReactの接続
+https://qiita.com/mikan3rd/items/0a1be8fa9f349735cf4a#pencil2-formjs-1
+https://t-kojima.github.io/2018/08/13/0040-firebase-react-database/
+https://qiita.com/gonta616/items/278a7e81a8b624d9621e
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Available Scriptsd
 
 In the project directory, you can run:
 
