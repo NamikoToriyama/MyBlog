@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router'
 
-class Todo extends Component {
+class Title extends Component {
 
   constructor() {
     super();
@@ -48,4 +48,4 @@ class Todo extends Component {
     );
   }
 }
-export default withRouter(Todo);
+export default withRouter(Title);

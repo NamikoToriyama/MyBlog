@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import './firebase';
+import '../firebase';
 import firebase from "firebase";
 import "firebase/storage";
-import Todo from "./Todo";
+import Todo from "./Title";
 
 
 class List extends Component {
@@ -17,7 +17,6 @@ class List extends Component {
   }
 
   componentDidMount() {
-    console.log( "なんちゃら")
     firebase.firestore()
       .collection('articles')
       .limit(20)
@@ -45,7 +44,6 @@ class List extends Component {
   }
  
   onClick() {    
-    console.log( "click")
     this.props.history.push({
         pathname: '/Article',
         state: { 
@@ -57,23 +55,14 @@ class List extends Component {
       });
   }
 
-  debug(){
-    console.log(this.text.length)
-  }
-
-
   render() {
     return (
       <div class="box">
-      <ul>
-       
-        {this.debug()}
+      <ul>       
         {Object.entries(this.text).map( article =>  (
           <Todo key={article[1]["data"]["article_id"]} article_id={article[1]["data"]["article_id"]}  title={article[1]["data"]["title"]} category={article[1]["data"]["category"]} content={article[1]["data"]["content"]}/>
         ))}
-        
-        {/* <Todo key={this.state.data["article_id"]} article_id={this.state.data["article_id"]} title={this.state.data["title"]} category={this.state.data["category"]} content={this.state.data["content"]}/> */}
-          
+                  
       </ul>
       </div>
     );

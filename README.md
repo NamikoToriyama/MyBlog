@@ -11,15 +11,30 @@ $ firebase deploy
 ```
 
 ## 参考リンク
-FirebaseとReactの接続
+なんだかんだ公式ドキュメントが最高だった。
+
+### FirebaseとReactの接続
 https://qiita.com/mikan3rd/items/0a1be8fa9f349735cf4a#pencil2-formjs-1
 https://t-kojima.github.io/2018/08/13/0040-firebase-react-database/
 https://qiita.com/gonta616/items/278a7e81a8b624d9621e
+https://qiita.com/isamua/items/c50d3a09615285bceea0#2-firebase-project%E3%81%AE%E4%BD%9C%E6%88%90%E3%81%A8%E8%A8%AD%E5%AE%9A
 
-バグ関連
+## バグ関連
 https://www.yoheim.net/blog.php?q=20180412
+https://qiita.com/stakezaki/items/2beceb3cc8b5dd696a8f
 [めちゃくちゃ役に立ったページ](https://qiita.com/stakezaki/items/2beceb3cc8b5dd696a8f)
 [componentsの使い方がわかりやすかった](https://qiita.com/sekikawa_a/items/8ab70f457ef73871419f)
+[フォームでバグらせた関係](https://qiita.com/koba04/items/40cc217ab925ef651113)
+
+## サインイン機能
+https://qiita.com/k-penguin-sato/items/6e892231922b360a8659#srcauthsignupjsx
+
+## Redux使いたい
+https://qiita.com/erukiti/items/e16aa13ad81d5938374e
+Redux使っても値渡せるらしい
+https://qiita.com/oda3104/items/de5489cd97ba674cbee5
+
+
 
 
 
