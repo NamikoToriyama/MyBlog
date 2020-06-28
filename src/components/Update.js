@@ -17,18 +17,17 @@ class Edit extends Component {
   onClick() {    
     const collection = firebase.firestore().collection('articles');
 
-    // 昔のものを消去する
+    // 昔のものを探す
     collection.where("article_id", "==", this.state.article_id).get().then(snapshot => { 
       snapshot.forEach(doc => {
         console.log(doc.id, '=>', doc.data());
-        // 新しく追加する
-        collection.add({
+        // Updateする
+        firebase.firestore().collection('articles').doc(doc.id).update({
           title: this.state.title,
           category: this.state.category,
           content: this.state.content,
           article_id: this.state.article_id
         });
-        firebase.firestore().collection('articles').doc(doc.id).delete();
       })
     })
     this.props.history.push('/List')
@@ -55,9 +54,10 @@ class Edit extends Component {
         </div>
         <div className="field">
           <label className="label">Content**</label>
-          <input
+          <textarea
             className="input"
             id= "blogContent"
+            rows={10}
             defaultValue={this.state.content}
             onChange={e => this.setState({ content: e.target.value })}
           />

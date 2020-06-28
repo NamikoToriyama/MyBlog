@@ -28,6 +28,7 @@ https://qiita.com/stakezaki/items/2beceb3cc8b5dd696a8f
 
 ## サインイン機能
 https://qiita.com/k-penguin-sato/items/6e892231922b360a8659#srcauthsignupjsx
+https://qiita.com/zaburo/items/801bd288cec47bd28764
 
 ## Redux使いたい
 https://qiita.com/erukiti/items/e16aa13ad81d5938374e

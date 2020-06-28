@@ -1,34 +1,51 @@
-import React, { useContext } from "react";
+import React, { Component } from "react";
+import { Link } from 'react-router-dom'
 import { withRouter } from "react-router";
-import { AuthContext } from "./AuthProvider";
+import firebase from "firebase";
 
-const Login = ({ history }) => {
-  const { login } = useContext(AuthContext);
-
-  // AuthContextからlogin関数を受け取る
-  const handleSubmit = event => {
+class LogInContainer extends Component {
+  handleSignUp = async event => {
     event.preventDefault();
     const { email, password } = event.target.elements;
-    login(email.value, password.value, history);
+    try {
+      const user = await firebase
+        .auth()
+        .signInWithEmailAndPassword(email.value, password.value);
+      this.props.history.push("/");
+    } catch (error) {
+      alert(error);
+    }
   };
 
-  return (
-    <div>
-      <h1>Log in</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Email
-          <input name="email" type="email" placeholder="Email" />
-        </label>
-        <br></br>
-        <label>
-          Password
-          <input name="password" type="password" placeholder="Password" />
-        </label>
-        <button type="submit">Log in</button>
-      </form>
-    </div>
-  );
-};
+  render() {
+    return (
+        <div>
+          <h1>Log in</h1>
+          <form onSubmit={this.handleSignUp}>
+            <label>
+              Email
+              <input
+                style={{ width: "100%" }}
+                name="email"
+                type="email"
+                placeholder="Email"
+              />
+            </label>
+            <label>
+              Password
+              <input
+                style={{ width: "100%" }}
+                name="password"
+                type="password"
+                placeholder="Password"
+              />
+            </label>
+            <button type="submit">Log in</button>
+          </form>
+          <Link to="/Signup">Sign up</Link>
+        </div>
+      );
+    };
+}
 
-export default withRouter(Login);
+export default withRouter(LogInContainer);

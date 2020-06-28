@@ -8,7 +8,7 @@ export default class Article extends Component {
       <div className="box">
         <div className="article">
         <h1>{this.props.location.state.title}</h1>
-        <p class="category">カテゴリ:{this.props.location.state.category}</p>
+        <p className="category">カテゴリ:{this.props.location.state.category}</p>
         <div className="panel">
             <p className="content">{this.props.location.state.content}</p>
         </div>

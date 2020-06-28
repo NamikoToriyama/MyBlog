@@ -23,7 +23,7 @@ class Title extends Component {
 
   editArticle(){
     this.props.history.push({
-      pathname: '/Edit',
+      pathname: '/Update',
       state: { 
         article_id : this.props.article_id,
         title: this.props.title,

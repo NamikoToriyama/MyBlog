@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import firebase from "firebase";
+const moment = require('moment')
+require('moment-timezone')
 
 export default class Add extends Component {
   constructor(props) {
@@ -13,10 +15,13 @@ export default class Add extends Component {
   }
 
   addFirestore(collection, size){
+    moment.tz.setDefault('Asia/Tokyo')
+    let now = moment()
     collection.add({
       title: this.state.title,
       category: this.state.category,
       content: this.state.content,
+      create_data: now.format(),
       article_id: size
     });
   }
@@ -29,7 +34,6 @@ export default class Add extends Component {
         size = doc.data()["article_id"]
       })
       this.addFirestore(collection, size+1)
-      console.log(size)
       this.setState({ title: '',  category: '', content: ''});
     })
   }
@@ -56,9 +60,10 @@ export default class Add extends Component {
         </div>
         <div className="field">
           <label className="label">Content</label>
-          <input
+          <textarea
             className="input"
             id="blogContent"
+            rows={10}
             value={this.state.content}
             onChange={e => this.setState({ content: e.target.value })}
           />

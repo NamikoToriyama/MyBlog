@@ -1,35 +1,64 @@
 import React, { Component } from 'react';
-import {Route,HashRouter as Router} from 'react-router-dom'
+import {Route,HashRouter as Router } from 'react-router-dom';
+import firebase from "firebase";
+
 import Header from './Header';
-import Home from './Home';
+
 import Login from './auth/Login';
 import Signup from './auth/Signup';
+import PrivateRoute from './PrivateRoute';
+
+import Home from './Home';
 import List from './components/List';
+import LatestList from './components/LatestList';
 import Add from './components/Add';
-import Edit from './components/Edit';
+import Update from './components/Update';
 import Delete from './components/Delete';
 import Article from './components/Article';
-import PrivateRoute from './PrivateRoute';
-import { AuthProvider } from './auth/AuthProvider';
-
 
 class AppRouter extends Component {
+
+  state = { loading: true, authenticated: false, user: null };
+
+  componentWillMount() {
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        this.setState({
+          authenticated: true,
+          currentUser: user,
+          loading: false
+        });
+      } else {
+        this.setState({
+          authenticated: false,
+          currentUser: null,
+          loading: false
+        });
+      }
+    });
+  }
+  
   render() {
+    const { authenticated, loading } = this.state;
+
+    if (loading) {
+      return <p>Loading..</p>;
+    }
     return (
       <div>
-        <AuthProvider>
           <Router>
               <Header />
               <Route exact path='/' component={Home}/>
               <Route exact path='/Login' component={Login}/>
               <Route exact path='/Signup' component={Signup}/>
               <Route exact path='/List' component={List}/>
+              <Route exact path='/LatestList' component={LatestList}/>
               <Route exact path='/Article' component={Article}/>
-              <PrivateRoute exact path='/Add' component={Add}/>
-              <PrivateRoute exact path='/Edit' component={Edit}/>
-              <PrivateRoute exact path='/Delete' component={Delete}/>
+              {/* ログイン周り */}
+              <PrivateRoute path="/Add" authenticated={this.state.authenticated} component={Add} />
+              <PrivateRoute path="/Update" authenticated={this.state.authenticated} component={Update} />
+              <PrivateRoute path="/Delete" authenticated={this.state.authenticated} component={Delete} />
           </Router>
-        </AuthProvider>
       </div>
     );
   }
