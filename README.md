@@ -29,15 +29,13 @@ https://qiita.com/stakezaki/items/2beceb3cc8b5dd696a8f
 ## サインイン機能
 https://qiita.com/k-penguin-sato/items/6e892231922b360a8659#srcauthsignupjsx
 https://qiita.com/zaburo/items/801bd288cec47bd28764
+結局下のやつをほぼほぼ使った
+https://maksimivanov.com/posts/firebase-react-tutorial/
 
 ## Redux使いたい
 https://qiita.com/erukiti/items/e16aa13ad81d5938374e
 Redux使っても値渡せるらしい
 https://qiita.com/oda3104/items/de5489cd97ba674cbee5
-
-
-
-
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
