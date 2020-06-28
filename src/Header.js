@@ -32,11 +32,12 @@ class Header extends React.Component {
             </Button>
             </div>
           </header>
-          <div className="title">
-            ♡ ♡ ♡ Namiko's Blog ♡ ♡ ♡
+          <div className="top">
+            <div className="title">
+              This is my Life!!!
+            </div>
           </div>
          </div>
-        
     );
   }
 }

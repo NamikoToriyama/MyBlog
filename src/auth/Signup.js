@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { Link } from 'react-router-dom'
 import firebase from "firebase";
+import '../css/Login.css';
 
 class SignUpContainer extends Component {
   handleSignUp = async event => {
@@ -19,9 +20,9 @@ class SignUpContainer extends Component {
 
   render() {
     return (
-        <div>
-          <h1>Sign up</h1>
-          <form onSubmit={this.handleSignUp}>
+        <div className="sign-up-content">
+          <form onSubmit={this.handleSignUp} className="sign-up">
+          <h1 className="sign-up-title">Sign up</h1>
             <label>
               Email
               <input
@@ -29,6 +30,7 @@ class SignUpContainer extends Component {
                 name="email"
                 type="email"
                 placeholder="Email"
+                className="sign-up-input"
               />
             </label>
             <label>
@@ -38,9 +40,10 @@ class SignUpContainer extends Component {
                 name="password"
                 type="password"
                 placeholder="Password"
+                className="sign-up-input"
               />
             </label>
-            <button type="submit">Sign Up</button>
+            <button type="submit" class="sign-up-button">Sign Up!!</button>
           </form>
           <Link to="/Login">Login</Link>
         </div>

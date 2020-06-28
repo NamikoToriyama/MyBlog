@@ -8,11 +8,35 @@
 
 header{
   text-align: center;
-  background-color: rgba(238 , 64, 86, 0.5);
+  background-color: #ffc823;
   width: 100%;
   height: 3em;
   margin: auto;
   margin-top: 0px;
+}
+
+.top{
+  width: 100%;
+  height: 20em;
+  text-align: center;
+  background-image: url("/assets/namiko.jpg");
+}
+
+.title {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin:0;
+  padding:0;
+  
+  display: flex;
+  flex-direction: column;
+  font-size: 4em;
+  font-weight: bold;
+  color: white;
 }
 
 .links{
@@ -36,16 +60,6 @@ header{
 .head {
   padding: 10px;
   margin: auto;
-}
-
-
-.title {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 3em;
 }
 
 .App-link {
