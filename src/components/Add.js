@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import firebase from "firebase";
+import '../css/form.css';
 const moment = require('moment')
 require('moment-timezone')
 

@@ -6,7 +6,7 @@
   text-align: center;
 }
 
-header{
+.header{
   text-align: center;
   background-color: #ffc823;
   width: 100%;
@@ -39,27 +39,9 @@ header{
   color: white;
 }
 
-.links{
-  color: white;
-  text-align: left;
-  overflow: hidden;
-  margin: auto;
-  min-width: 100px;
-  float: left;
-  font-size: 1.2em;
-  -moz-transition: all 280ms ease;
-  -o-transition: all 280ms ease;
-  -webkit-transition: all 280ms ease;
-  transition: all 280ms ease;
-}
-
-.links + .links {
-  margin: 0 0 0 12px;
-}
-
 .head {
-  padding: 10px;
   margin: auto;
+  color: white;
 }
 
 .App-link {

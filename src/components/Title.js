@@ -44,7 +44,7 @@ class Title extends Component {
             <button  onClick={this.edit}>記事の修正</button>
           </div>
         </nav>
-      </li>
+      </li>      
     );
   }
 }

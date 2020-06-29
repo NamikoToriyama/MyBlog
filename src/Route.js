@@ -15,6 +15,7 @@ import Add from './components/Add';
 import Update from './components/Update';
 import Delete from './components/Delete';
 import Article from './components/Article';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 class AppRouter extends Component {
 
@@ -45,16 +46,19 @@ class AppRouter extends Component {
       return <p>Loading..</p>;
     }
     return (
-      <div>
+      <div>   
           <Router>
+          <React.Fragment>
+            <MuiThemeProvider>
               <Header />
+            </MuiThemeProvider>
+            </React.Fragment>
               <Route exact path='/' component={Home}/>
               <Route exact path='/Login' component={Login}/>
               <Route exact path='/Signup' component={Signup}/>
               <Route exact path='/List' component={List}/>
               <Route exact path='/LatestList' component={LatestList}/>
               <Route exact path='/Article' component={Article}/>
-              {/* ログイン周り */}
               <PrivateRoute path="/Add" authenticated={this.state.authenticated} component={Add} />
               <PrivateRoute path="/Update" authenticated={this.state.authenticated} component={Update} />
               <PrivateRoute path="/Delete" authenticated={this.state.authenticated} component={Delete} />
