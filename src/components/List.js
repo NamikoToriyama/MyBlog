@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import '../firebase';
 import firebase from "firebase";
 import "firebase/storage";
-import Todo from "./Title";
+import Title from "./Title";
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 
 class List extends Component {
@@ -19,7 +20,7 @@ class List extends Component {
   componentDidMount() {
     firebase.firestore()
       .collection('articles')
-      .limit(20)
+      .limit(10)
       .orderBy("article_id", "desc")
       .get()
       .then(snapshot => {
@@ -49,6 +50,7 @@ class List extends Component {
         state: { 
           article_id : this.state.article_id,
           title: "title",
+          create_data: "create_data",
           category: "category",
           content: "content",
         }
@@ -60,7 +62,17 @@ class List extends Component {
       <div className="box">
       <ul>       
         {Object.entries(this.text).map( article =>  (
-          <Todo key={article[1]["data"]["article_id"]} article_id={article[1]["data"]["article_id"]}  title={article[1]["data"]["title"]} category={article[1]["data"]["category"]} content={article[1]["data"]["content"]}/>
+           <React.Fragment>
+           <MuiThemeProvider>
+          <Title 
+          key={article[1]["data"]["article_id"]} 
+          article_id={article[1]["data"]["article_id"]}  
+          title={article[1]["data"]["title"]} 
+          create_data={article[1]["data"]["create_data"]}
+          category={article[1]["data"]["category"]} 
+          content={article[1]["data"]["content"]}/>
+          </MuiThemeProvider>
+            </React.Fragment>
         ))}
                   
       </ul>

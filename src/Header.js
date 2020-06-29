@@ -7,26 +7,9 @@ import { Button } from '@material-ui/core';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from '@material-ui/core/Toolbar'
 
-import IconButton from 'material-ui/IconButton';
-import IconMenu from 'material-ui/IconMenu';
-import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
 import FlatButton from 'material-ui/FlatButton';
 import Drawer from 'material-ui/Drawer';
-
-import Toggle from 'material-ui/Toggle';
-import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
-import NavigationClose from 'material-ui/svg-icons/navigation/close';
-
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import Avatar from 'material-ui/Avatar';
-import List from 'material-ui/List/List';
-import ListItem from 'material-ui/List/ListItem';
-import Popover, { PopoverAnimationVertical } from 'material-ui/Popover';
-import Chip from 'material-ui/Chip';
-import Login from './auth/Login';
-
-import { Route, Redirect } from "react-router-dom";
 
 class Header extends React.Component {
   constructor(props) {
@@ -35,6 +18,7 @@ class Header extends React.Component {
       open: false
     };
     this.logout = this.logout.bind(this);
+    this.home = this.home.bind(this);
   }
 
   handleToggle = () => this.setState({ open: !this.state.open });
@@ -43,6 +27,10 @@ class Header extends React.Component {
   logout() {
     firebase.auth().signOut();
     alert("ログアウトしました");
+    this.props.history.push('/')
+  }
+
+  home(){
     this.props.history.push('/')
   }
 
@@ -84,11 +72,11 @@ class Header extends React.Component {
           </Drawer>
 
           <Toolbar>
-            <Button color="inherit" onClick={this.logout} className="head">Sign out</Button>
+            <Button color="inherit" onClick={this.logout} ><p className="head">Sign out</p></Button>
             <Button color="inherit "><Link to="/Login" className="head">Login</Link></Button>
           </Toolbar>
         </AppBar>
-        <div className="top">
+        <div className="top" onClick={this.home}>
           <div className="title">
             This is my Life!!!
             </div>
@@ -97,6 +85,5 @@ class Header extends React.Component {
     );
   }
 }
-
 
 export default withRouter(Header);

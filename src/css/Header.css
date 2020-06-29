@@ -44,6 +44,10 @@
   color: white;
 }
 
+.head:hover{
+  color: black;
+}
+
 .App-link {
   color: #61dafb;
 }

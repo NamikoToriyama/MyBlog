@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router'
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import FlatButton from 'material-ui/FlatButton';
+const moment = require('moment')
 
 class Title extends Component {
 
@@ -15,6 +18,7 @@ class Title extends Component {
       state: { 
         article_id : this.props.article_id,
         title: this.props.title,
+        create_data: this.props.create_data,
         category: this.props.category,
         content: this.props.content,
       }
@@ -35,16 +39,16 @@ class Title extends Component {
 
   render() {
     return (
-      <li className="todo">
-        <nav className="panel">
-          <div className="panel-heading">
-            <p>{this.props.article_id}</p>
-            <p>{this.props.title}</p>
-            <button  onClick={this.onClick}>詳細をみる</button>
-            <button  onClick={this.edit}>記事の修正</button>
-          </div>
-        </nav>
-      </li>      
+      <div>
+      <Card>
+        <p>{this.props.article_id}</p>
+        <CardTitle title={this.props.title} subtitle={moment(this.props.create_data).format("dddd, MMMM Do YYYY, h:mm a")}/>
+        <CardActions>
+          <FlatButton label="詳細をみる" onClick={this.onClick}/>
+          <FlatButton label="記事の修正" onClick={this.edit}/>
+        </CardActions>
+      </Card>
+      </div>    
     );
   }
 }

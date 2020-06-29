@@ -3,6 +3,8 @@ import '../firebase';
 import firebase from "firebase";
 import "firebase/storage";
 import Todo from "./Title";
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+const moment = require('moment')
 
 
 class LatestList extends Component {
@@ -26,6 +28,7 @@ class LatestList extends Component {
         snapshot.forEach(doc => {
           this.setState({ data: doc.data()|| [] });
           this.text.push(this.state)
+          console.log(doc.data())
         })
         this.setState({update: false})
       })
@@ -49,6 +52,7 @@ class LatestList extends Component {
         state: { 
           article_id : this.state.article_id,
           title: "title",
+          create_data: moment.now(),
           category: "category",
           content: "content",
         }
@@ -62,7 +66,15 @@ class LatestList extends Component {
       <div className="box">
         <ul>       
           {Object.entries(this.text).map( article =>  (
-            <Todo key={article[1]["data"]["article_id"]} article_id={article[1]["data"]["article_id"]}  title={article[1]["data"]["title"]} category={article[1]["data"]["category"]} content={article[1]["data"]["content"]}/>
+            <React.Fragment>
+            <MuiThemeProvider>
+              <Todo key={article[1]["data"]["article_id"]} 
+                    title={article[1]["data"]["title"]} 
+                    create_data={article[1]["data"]["create_data"]}
+                    category={article[1]["data"]["category"]} 
+                    content={article[1]["data"]["content"]}/>
+            </MuiThemeProvider>
+            </React.Fragment>
           ))}
                     
         </ul>
