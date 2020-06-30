@@ -1,8 +1,29 @@
-## めも
+# MyBlog
+## About
+- ブログを作成した。作成期間3日くらい
+- 標準機能として,認証、記事の閲覧、作成、削除ができる
+-  DBと認証機能はFirebaseを利用。基本的なコーディングはReact, デザインはMaterialUIを使って行った。
+
+## 大変だったところ
+- Reactでのコーディング。特にルーティング周りがうまくいかないことが多かった
+- 認証部分がとても難しかった。参考のリンクをほぼ利用したが、利用した上でも組み合わせるのが大変だった。
+- ローカルの環境とサーバをアップした時の環境で差異が
+
+### 実行
+ローカル環境での実行
+```
+$ yarn start
+```
 
 ### ビルド
+buildファイル作成
 ```
-yarn build
+$ yarn build
+```
+ローカルでネットワークにあげた環境をみたいとき
+```
+$ yarn global add serve
+$ serve -s build
 ```
 
 ### デプロイ
@@ -15,26 +36,39 @@ $ firebase deploy
 
 ### FirebaseとReactの接続
 https://qiita.com/mikan3rd/items/0a1be8fa9f349735cf4a#pencil2-formjs-1
+
 https://t-kojima.github.io/2018/08/13/0040-firebase-react-database/
+
 https://qiita.com/gonta616/items/278a7e81a8b624d9621e
+
 https://qiita.com/isamua/items/c50d3a09615285bceea0#2-firebase-project%E3%81%AE%E4%BD%9C%E6%88%90%E3%81%A8%E8%A8%AD%E5%AE%9A
 
 ## バグ関連
 https://www.yoheim.net/blog.php?q=20180412
+
 https://qiita.com/stakezaki/items/2beceb3cc8b5dd696a8f
+
 [めちゃくちゃ役に立ったページ](https://qiita.com/stakezaki/items/2beceb3cc8b5dd696a8f)
+
 [componentsの使い方がわかりやすかった](https://qiita.com/sekikawa_a/items/8ab70f457ef73871419f)
+
 [フォームでバグらせた関係](https://qiita.com/koba04/items/40cc217ab925ef651113)
 
 ## サインイン機能
 https://qiita.com/k-penguin-sato/items/6e892231922b360a8659#srcauthsignupjsx
+
 https://qiita.com/zaburo/items/801bd288cec47bd28764
+
 結局下のやつをほぼほぼ使った
+
 https://maksimivanov.com/posts/firebase-react-tutorial/
 
 ## Redux使いたい
+
 https://qiita.com/erukiti/items/e16aa13ad81d5938374e
+
 Redux使っても値渡せるらしい
+
 https://qiita.com/oda3104/items/de5489cd97ba674cbee5
 
 ## CSSデザイン・materialUIについて
