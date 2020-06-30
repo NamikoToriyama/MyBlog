@@ -44,8 +44,11 @@ class SignUpContainer extends Component {
               />
             </label>
             <button type="submit" class="sign-up-button">Sign Up!!</button>
+            <div>
+              <Link to="/Login"><p className="login-signup">▷ Login</p></Link>
+            </div>
           </form>
-          <Link to="/Login">Login</Link>
+          
         </div>
       );
   }

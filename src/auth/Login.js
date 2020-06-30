@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from 'react-router-dom'
 import { withRouter } from "react-router";
 import firebase from "firebase";
+import '../css/form.css';
 
 class LogInContainer extends Component {
   handleSignUp = async event => {
@@ -43,8 +44,10 @@ class LogInContainer extends Component {
           />
         </label>
         <button type="submit" className="sign-up-button">Login</button>
+        <div>
+          <Link to="/Signup"><p className="login-signup">▷ Sign up</p></Link>
+        </div>
       </form>
-      <button><Link to="/Signup">Sign up</Link></button>
       
     </div>
       );

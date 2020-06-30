@@ -146,3 +146,11 @@ input {
   border: 0;
   padding: 0;
 }
+
+
+.login-signup{
+  text-decoration: none;
+  font-weight: bold;
+  color: #e75446;
+  font-size: 15px;
+}
