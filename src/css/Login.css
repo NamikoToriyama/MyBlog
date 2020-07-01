@@ -7,10 +7,15 @@
   * https://www.opensource.org/licenses/mit-license.php
 */
 
+html{
+  background-color:  #596778;
+  height: 100%;
+}
+
 .sign-up-content {
   font: 13px/20px 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  /* color: #404040;
-  background: #596778; */
+  color: #404040;
+  background: #596778;
 }
 
 .sign-up {

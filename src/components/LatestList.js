@@ -4,6 +4,7 @@ import firebase from "firebase";
 import "firebase/storage";
 import Todo from "./Title";
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import "../css/App.css";
 const moment = require('moment')
 
 
@@ -62,7 +63,7 @@ class LatestList extends Component {
   render() {
     return (
       <div>
-      <h2>最近の記事</h2>
+      <h2><p class="h2title">最近の記事</p></h2>
       <div className="box">
         <ul>       
           {Object.entries(this.text).map( article =>  (

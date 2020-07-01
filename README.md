@@ -26,6 +26,10 @@ $ yarn global add serve
 $ serve -s build
 ```
 
+### Link
+
+https://myblog-84d29.web.app/
+
 ### デプロイ
 ```
 $ firebase deploy
@@ -73,7 +77,12 @@ https://qiita.com/oda3104/items/de5489cd97ba674cbee5
 
 ## CSSデザイン・materialUIについて
 https://sounansa.net/archives/647
+
 http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressMaterial.html
+
+https://material-ui.com/ja/components/box/
+
+https://v0.material-ui.com/#/components/card
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

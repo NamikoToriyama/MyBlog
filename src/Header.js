@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './css/Header.css';
 import { Link } from 'react-router-dom'
 import { withRouter } from 'react-router'
@@ -8,7 +8,6 @@ import AppBar from 'material-ui/AppBar';
 import Toolbar from '@material-ui/core/Toolbar'
 
 import MenuItem from 'material-ui/MenuItem';
-import FlatButton from 'material-ui/FlatButton';
 import Drawer from 'material-ui/Drawer';
 
 class Header extends React.Component {

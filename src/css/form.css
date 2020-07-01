@@ -14,10 +14,33 @@ textarea {
 }
 
 .content{
-  font-size: 1.5em;
+  font-size: 1.2em;
+  text-align: left;
+  margin-top: 1em;
+  padding: 1.7em;
+}
+
+.category{
+  text-align: right;
+  margin-right: 10%;
+  margin-top: 1.5em;
+}
+
+.article-title{
+  padding-top: 1em;
+  /* margin: 1em; */
 }
 
 #blogContent {
   height: 260px;
   font-size: 16px;
+}
+
+.article{
+  margin       : auto;
+  margin-top: 3.5em;
+  text-align: center;
+  width        : 70%;
+  height       : 100%;
+  background-color: rgba(255 , 255, 255, 0.9);
 }
