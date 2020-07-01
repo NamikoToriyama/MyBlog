@@ -26,10 +26,6 @@ $ yarn global add serve
 $ serve -s build
 ```
 
-### Link
-
-https://myblog-84d29.web.app/
-
 ### デプロイ
 ```
 $ firebase deploy
